@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}  Analysis {% endblock %}</h1>
+    <ul>
+        <li>
+            <a href="/analysis/make"> Make </a>
+        </li>
+        <li>
+            <a href="/analysis/model"> Model </a>
+        </li>
+        <li>
+            <a href="/analysis/variant"> Variant </a>
+        </li>
+        <li>
+            <a href="/analysis/price"> Ex-Showroom_Price </a>
+        </li>
+        <li>
+            <a href="/analysis/displ"> Displacement </a>
+        </li>
+        <li>
+            <a href="/analysis/cylinder"> Cylinders </a>
+        </li>
+        <li>
+            <a href="/analysis/valves"> Valves_Per_Cylinder </a>
+        </li>
+        <li>
+            <a href="/analysis/drivetrain"> Drivetrain </a>
+        </li>
+        <li>
+            <a href="/analysis/cyl_conf"> Cylinder_Configuration </a>
+        </li>
+        <li>
+            <a href="/analysis/emmisson"> Emission_Norm </a>
+        </li>
+        <li>
+            <a href="/analysis/eng_loc"> Engine_Location </a>
+        </li>
+        <li>
+            <a href="/analysis/fuel_sys"> Fuel_System </a>
+        </li>
+        <li>
+            <a href="/analysis/tank_capacity"> Fuel_Tank_Capacity </a>
+        </li>
+        <li>
+            <a href="/analysis/fuel_type"> Fuel_Type </a>
+        </li>
+        <li>
+            <a href="/analysis/ht"> Height </a>
+        </li>
+        <li>
+            <a href="/analysis/leng"> Length </a>
+        </li>
+        <li>
+            <a href="/analysis/wdt"> Width </a>
+        </li>
+        <li>
+            <a href="/analysis/body_type"> Body_Type </a>
+        </li>
+         <li>
+            <a href="/analysis/doors"> Doors </a>
+        </li>
+         <li>
+            <a href="/analysis/city_mil"> City_Mileage </a>
+        </li>
+         <li>
+            <a href="/analysis/high_mil"> Highway_Mileage </a>
+        </li>
+         <li>
+            <a href="/analysis/arai"> ARAI_Certified_Mileage </a>
+        </li>
+         <li>
+            <a href="/analysis/gears"> Gears </a>
+        </li>
+        <li>
+            <a href="/analysis/gnd_clr"> Ground_Clearance </a>
+        </li>
+        <li>
+            <a href="/analysis/fbrakes"> Front_Brakes </a>
+        </li> 
+        <li>
+            <a href="/analysis/bbrakes"> Rear_Brakes </a>
+        </li>
+        <li>
+            <a href="/analysis/fnt_susp"> Front_Suspension </a>
+        </li>
+        <li>
+            <a href="/analysis/bk_susp"> Back_Suspension </a>
+        </li>
+        <li>
+            <a href="/analysis/f_track"> Front_Track </a>
+        </li>
+        <li>
+            <a href="/analysis/b_track"> Rear_Track </a>
+        </li>
+        <li>
+            <a href="/analysis/steer"> Power_Steering </a>
+        </li>
+        <li>
+            <a href="/analysis/pow_win"> Power_Windows </a>
+        </li>
+        <li>
+            <a href="/analysis/pow_seats"> Power_Seats </a>
+        </li>
+        <li>
+            <a href="/analysis/keyless"> Keyless_Entry </a>
+        </li>
+        <li>
+            <a href="/analysis/odometer"> Odometer </a>
+        </li>
+        <li>
+            <a href="/analysis/speedometer"> Speedometer </a>
+        </li>
+        <li>
+            <a href="/analysis/tachometer"> Tachometer </a>
+        </li>
+        <li>
+            <a href="/analysis/tripmeter"> Tripmeter </a>
+        </li>
+        <li>
+            <a href="/analysis/seat_capacity"> Seating_Capacity </a>
+        </li>
+        <li>
+            <a href="/analysis/seat_material"> Seats_Material </a>
+        </li>
+        <li>
+            <a href="/analysis/type"> Type </a>
+        </li>
+        <li>
+            <a href="/analysis/wheelbase"> Wheelbase </a>
+        </li>
+        <li>
+            <a href="/analysis/start_button"> Start_/_Stop_Button </a>
+        </li>
+        <li>
+            <a href="/analysis/pow_outlet"> 12v_Power_Outlet </a>
+        </li>
+        <li>
+            <a href="/analysis/audiosys"> Audiosystem </a>
+        </li>
+        <li>
+            <a href="/analysis/aux_in"> Aux-in_Compatibility </a>
+        </li>
+        <li>
+            <a href="/analysis/fuel_cons"> Average_Fuel_Consumption </a>
+        </li>
+        <li>
+            <a href="/analysis/warranty"> Basic_Warranty </a>
+        </li>
+        <li>
+            <a href="/analysis/bluetooth"> Bluetooth </a>
+        </li>
+        <li>
+            <a href="/analysis/bootlid_opener"> Boot-lid_Opener </a>
+        </li>
+        <li>
+            <a href="/analysis/bootspace"> Boot_Space </a>
+        </li>
+        <li>
+            <a href="/analysis/cd"> CD_/_MP3_/_DVD_Player </a>
+        </li>
+        <li>
+            <a href="/analysis/central_lock"> Central_Locking </a>
+        </li>
+        <li>
+            <a href="/analysis/child_lock"> Child_Safety_Locks </a>
+        </li>
+        <li>
+            <a href="/analysis/clock"> Clock </a>
+        </li>
+        <li>
+            <a href="/analysis/cup_holders"> Cup_Holders </a>
+        </li>
+        <li>
+            <a href="/analysis/dist_empty"> Distance_to_Empty </a>
+        </li>
+        <li>
+            <a href="/analysis/door_pockets"> Door_Pockets </a>
+        </li>
+        <li>
+            <a href="/analysis/eng_light"> Engine_Malfunction_Light </a>
+        </li>
+        <li>
+            <a href="/analysis/ext_warranty"> Extended_Warranty </a>
+        </li>
+        <li>
+            <a href="/analysis/fm"> FM_Radio </a>
+        </li>
+        <li>
+            <a href="/analysis/fuellid_opener"> Fuel-lid_Opener </a>
+        </li>
+        <li>
+            <a href="/analysis/fuel_gauge"> Fuel_Gauge </a>
+        </li>
+        <li>
+            <a href="/analysis/handbrake"> Handbrake </a>
+        </li>
+        <li>
+            <a href="/analysis/instr_cons"> Instrument_Console </a>
+        </li>
+        <li>
+            <a href="/analysis/low_fuel_warn"> Low_Fuel_Warning </a>
+        </li>
+        <li>
+            <a href="/analysis/mult_displ"> Multifunction_Display </a>
+        </li>
+        <li>
+            <a href="/analysis/sun_visor"> Sun_Visor </a>
+        </li>
+        <li>
+            <a href="/analysis/third_ac"> Third_Row_AC_Vents </a>
+        </li>
+        <li>
+            <a href="/analysis/vent_sys"> Ventilation_System </a>
+        </li>
+        <li>
+            <a href="/analysis/dim_rear"> Auto-Dimming_Rear-View_Mirror </a>
+        </li>
+        <li>
+            <a href="/analysis/hill_assist"> Hill_Assist </a>
+        </li>
+        <li>
+            <a href="/analysis/gear_indi"> Gear_Indicator </a>
+        </li>
+        <li>
+            <a href="/analysis/immobiliser"> Engine_Immobilizer </a>
+        </li>
+        <li>
+            <a href="/analysis/back_pockets"> Seat_Back_Pockets </a>
+        </li>
+        <li>
+            <a href="/analysis/abs"> ABS_(Anti-lock_Braking_System) </a>
+        </li>
+        <li>
+            <a href="/analysis/headlight"> Headlight_Reminder </a>
+        </li>
+        <li>
+            <a href="/analysis/headrests"> Adjustable_Headrests </a>
+        </li>
+        <li>
+            <a href="/analysis/gross_wt"> Gross_Vehicle_Weight </a>
+        </li>
+        <li>
+            <a href="/analysis/airbag"> Airbags </a>
+        </li>
+        <li>
+            <a href="/analysis/door_ajar"> Door_Ajar_Warning </a>
+        </li>
+        <li>
+            <a href="/analysis/ebd"> EBD_(Electronic_Brake-force_Distribution) </a>
+        </li>
+        <li>
+            <a href="/analysis/seat_belt"> Fasten_Seat_Belt_Warning </a>
+        </li>
+        <li>
+            <a href="/analysis/gear_shift"> Gear_Shift_Reminder </a>
+        </li>
+        <li>
+            <a href="/analysis/airbag_no"> Number_of_Airbags </a>
+        </li>
+        <li>
+            <a href="/analysis/adj_steer"> Adjustable_Steering_Column </a>
+        </li>
+        <li>
+            <a href="/analysis/park_assist"> Parking_Assistance </a>
+        </li>
+        <li>
+            <a href="/analysis/key_off"> Key_Off_Reminder </a>
+        </li>
+        <li>
+            <a href="/analysis/usb"> USB_Compatibility </a>
+        </li>
+        <li>
+            <a href="/analysis/cigarette"> Cigarette_Lighter </a>
+        </li>
+        <li>
+            <a href="/analysis/infotainment"> Infotainment_Screen </a>
+        </li>
+        <li>
+            <a href="/analysis/multifn_steer"> Multifunction_Steering_Wheel </a>
+        </li>
+        <li>
+            <a href="/analysis/avg_speed"> Average_Speed </a>
+        </li>
+        <li>
+            <a href="/analysis/eba"> EBA_(Electronic_Brake_Assist) </a>
+        </li>
+        <li>
+            <a href="/analysis/seat_height"> Seat_Height_Adjustment </a>
+        </li>
+        <li>
+            <a href="/analysis/nav_system"> Navigation_System </a>
+        </li>
+        <li>
+            <a href="/analysis/second_ac"> Second_Row_AC_Vents </a>
+        </li>
+        <li>
+            <a href="/analysis/armrest"> Rear_Center_Armrest </a>
+        </li>
+        <li>
+            <a href="/analysis/ipod"> iPod_Compatibility </a>
+        </li>
+        <li>
+            <a href="/analysis/esp"> ESP_(Electronic_Stability_Program) </a>
+        </li>
+        <li>
+            <a href="/analysis/glove_box"> Cooled_Glove_Box </a>
+        </li>
+        <li>
+            <a href="/analysis/turbo"> Turbocharger </a>
+        </li>
+        <li>
+            <a href="/analysis/isofix"> ISOFIX_(Child-Seat_Mount) </a>
+        </li>
+        <li>
+            <a href="/analysis/wiper"> Rain_Sensing_Wipers </a>
+        </li>
+        <li>
+            <a href="/analysis/leather_steer"> Leather_Wrapped_Steering </a>
+        </li>
+        <li>
+            <a href="/analysis/auto_headlamp"> Automatic_Headlamps </a>
+        </li>
+        <li>
+            <a href="/analysis/asr"> ASR_/_Traction_Control </a>
+        </li>
+        <li>
+            <a href="/analysis/cruise"> Cruise_Control </a>
+        </li>
+{% endblock %}

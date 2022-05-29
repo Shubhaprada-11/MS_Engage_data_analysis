@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Summary {% endblock %}</h1>
+    <div>
+        <p>
+            <embed src="/static/summary.txt">
+        </p>
+    </div>
+{% endblock %}

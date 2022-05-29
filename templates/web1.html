@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Analysis of the different 
+Ex-Showroom_Price {% endblock %}</h1>
+    <div>
+        <p>
+            <embed src="/static/output.txt" width=1000 height=500>
+        </p>
+        <p>
+            <img src="/static/graph.jpg" width=200 height=500>
+        </p>
+    </div>
+{% endblock %}

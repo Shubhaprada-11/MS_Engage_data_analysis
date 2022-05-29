@@ -1,0 +1,5 @@
+there are 1 different Cruise_Control
+they are 
+['Yes']
+number of cars of each Cruise_Control:
+Yes:549
