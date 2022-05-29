@@ -15,6 +15,10 @@ def numerical(no): #it takes the column index as an argument
                   row.append(i) #append all the rows to a last for future access
                   if i[1]!="Make": #append all values in the particular column expect the header row to a list
                         temp.append(i[no])
+                        temp=list(set(temp))
+             #remove null values
+                  if '' in temp:
+                        temp.remove('')
             # the data values are in string form which include units(eg.Rs etc) that need to be removed 
             for x in range(0,len(temp)):
                   temp[x]=str(temp[x]).replace("Rs. ",'')
@@ -29,9 +33,6 @@ def numerical(no): #it takes the column index as an argument
                   temp[x]=str(temp[x]).replace('?','')
                   if no==20 or no==21 or no==22:
                         temp[x]=str(temp[x][:2]) #columns 20-22 contain ranges and hence only the minimum in considered
-                  #remove null values
-                  if '' in temp:
-                        temp.remove('')
                   temp[x]=float(temp[x]) #convert to float so that computation can be done
             f=open('static/output.txt','w')
             #code to compute mean
