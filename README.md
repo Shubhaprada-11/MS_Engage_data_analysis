@@ -1,7 +1,7 @@
 # MS_Engage_data_analysis
 ## Packages to install
-To run the web application, Flask and matplotlib needs to be installed on the system\
-![readme](https://user-images.githubusercontent.com/95869528/170873180-f97a7f7c-086f-4503-9ba3-a328c37569e4.png)
+To run the web application, flask and matplotlib needs to be installed on the system\
+![readme](https://user-images.githubusercontent.com/95869528/170877151-4be34449-a5f0-4e2a-a150-88885d63efa9.png)
 ![readme2](https://user-images.githubusercontent.com/95869528/170873239-d99c508b-7063-44a0-86f4-56b1801ef03f.png)
 
 ## Run the app
