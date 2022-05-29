@@ -1,21 +1,24 @@
+#import necessary packages
 from flask import Flask,render_template, url_for
 import csv
 import matplotlib
 import matplotlib.pyplot as plt
 import os
 
-def numerical(no):
-      with open('cars_engage_2022.csv', 'r') as datafile:
+# the computation to be done in case of features that have numerical values
+def numerical(no): #it takes the column index as an argument
+      with open('cars_engage_2022.csv', 'r') as datafile: #csv package to open csv file
             reader= csv.reader(datafile)
             row=[]
             temp=[]
             for i in reader:
-                  row.append(i)
-                  if i[1]!="Make":
+                  row.append(i) #append all the rows to a last for future access
+                  if i[1]!="Make": #append all values in the particular column expect the header row to a list
                         temp.append(i[no])
-                        temp=list(set(temp))
+            #remove null values
             if '' in temp:
                   temp.remove('')
+            # the data values are in string form which include units(eg.Rs etc) that need to be removed 
             for x in range(0,len(temp)):
                   temp[x]=str(temp[x]).replace("Rs. ",'')
                   temp[x]=str(temp[x]).replace(',','')
@@ -28,11 +31,14 @@ def numerical(no):
                   temp[x]=str(temp[x]).replace("NA",'0')
                   temp[x]=str(temp[x]).replace('?','')
                   if no==20 or no==21 or no==22:
-                        temp[x]=str(temp[x][:2])
-                  temp[x]=float(temp[x])
+                        temp[x]=str(temp[x][:2]) #columns 20-22 contain ranges and hence only the minimum in considered
+                  temp[x]=float(temp[x]) #convert to float so that computation can be done
             f=open('static/output.txt','w')
+            #code to compute mean
             mean = sum(temp) / len(temp)
+            #code to compute variance
             var = sum([((x - mean) ** 2) for x in temp]) / len(temp)
+            #standard deviation 
             res = var ** 0.5
             f.write("The mean of the data is ")
             f.write(str(mean))
@@ -42,33 +48,39 @@ def numerical(no):
             f.write(str(min(temp)))
             f.write('\n'+"The max value for the data is ")
             f.write(str(max(temp)))
+            # to write web.html depending on the feature to be analysed
             webpg=open("templates/web.html",'w')
             wr1=open("templates/dupl.html",'r')
             webpg.write(wr1.read())
             webpg.write(row[0][no])
             wr2=open("templates/dupl1.html",'r')
-            webpg.write(wr2.read())   
+            webpg.write(wr2.read()) 
+            #web.html is written using 2 segments present in dupl.html and dupl1.html 
 
+# the computation to be done in case of features that have numerical values
 def unique(no):
-      with open('cars_engage_2022.csv', 'r') as datafile:
+      with open('cars_engage_2022.csv', 'r') as datafile: #csv package to open csv file
             reader= csv.reader(datafile)
             temp=[]
             row=[]
             for i in reader:
-                  row.append(i)
+                  row.append(i) #append all the rows to a last for future access
                   if i[1]!="Make":
                         temp.append(i[no])
-                        temp=list(set(temp))
+                        temp=list(set(temp)) #append all values in the particular column expect the header row to a list
+            #remove null values
             if '' in temp:
-                  temp.remove('')
+                  temp.remove('') 
+            #write the unique values to an output file which will later be embedded in the html page
             file=open('static/output.txt','w')
-            file.write("there are ")
+            file.write("There are ")
             file.write(str(len(temp))) 
             file.write(" different "+row[0][no]+'\n')
-            file.write("they are "+'\n')
+            file.write("They are "+'\n')
             file.write(str(temp))
             n=len(temp)
             num=[0]*n
+            #find the number of instances of each element present in the dataset
             for i in row:
                   for k in range(0,len(temp)):
                         if i[no]==temp[k]:
@@ -78,24 +90,26 @@ def unique(no):
             for j in range(0,len(temp)):
                   file.write(temp[j]+":")
                   file.write(str(num[j])+'\n')
-                  if num[j]>5:
+                  if num[j]>5: #only significant ones are plotted, if number  of instances is more than 5
                         x.append(temp[j])
                         y.append(num[j])
+            #plot the graph of unique elements versus the number of instances of each elemnt
             plot1=plt.figure(1)
             plt.bar(x, y, color='g', label = "no of each")
             plt.xlabel(row[0][no])
-            plt.ylabel('Num')
+            plt.ylabel('Number of instances')
             plt.xticks(rotation='vertical', fontsize=4)
             plt.title('number of each diff '+row[0][no]+'(more than 5 entries)')
-            os.remove('static/plot.jpg')
-            plot1.savefig('static/plot.jpg')
+            os.remove('static/plot.jpg') #remove the previous plot
+            plot1.savefig('static/plot.jpg') #save the new plot
+            #write the html page to be rendered using dupl.html and dupl2.html which embeds the output file and the graph
             webpg=open("templates/web.html",'w')
             wr1=open("templates/dupl.html",'r')
             webpg.write(wr1.read())
             webpg.write(row[0][no])
             wr2=open("templates/dupl2.html",'r')
             webpg.write(wr2.read())     
-
+#flask app
 app = Flask(__name__)
 
 @app.route("/")
@@ -104,6 +118,7 @@ def index():
 
 @app.route("/summary")
 def summary():
+      #csv package to get the summary of the dataset given
       with open('cars_engage_2022.csv', 'r') as datafile:
             reader= csv.reader(datafile)    
             colu=len(next(reader))
@@ -115,6 +130,7 @@ def summary():
             f.write("To analyse by feature, go to Analysis")
       return render_template("summary.html")
 
+#routing to different webpages and rendering web.html according to the feature to be analysed
 @app.route("/analysis")
 def analysis():
       return render_template("analysis.html")
@@ -660,5 +676,6 @@ def cruise():
       unique(135)
       return render_template('web.html')
 
+#run the app on localhost, port 8080
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)
