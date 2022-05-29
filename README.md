@@ -1,11 +1,11 @@
 # MS_Engage_data_analysis
 ## Packages to install
-To run the web application, Flask and matplotlib needs to be installed on the system  < br/>
+To run the web application, Flask and matplotlib needs to be installed on the system\
 ![readme](https://user-images.githubusercontent.com/95869528/170873180-f97a7f7c-086f-4503-9ba3-a328c37569e4.png)
 ![readme2](https://user-images.githubusercontent.com/95869528/170873239-d99c508b-7063-44a0-86f4-56b1801ef03f.png)
 
 ## Run the app
-python3 app.py < br/>
+python3 app.py\
 Frontend is built using Flask and HTML  < br/>
 
 ## Languages used
