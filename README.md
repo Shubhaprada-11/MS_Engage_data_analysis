@@ -26,7 +26,7 @@ Source code expects input csv file to be of the format as per cars_engage_2022.c
 
 ## Future Scope
 The web app as of now only performs feature wise analysis \
-Future scope is to implement row wise analysis, input validation using AI, and flexibity to analyse different datasets
+Future scope is to implement row wise analysis, input validation using AI, flexibity to analyse different datasets, and multidimensional visualisation
 
 ## Contact me
 shubharv@outlook.com
